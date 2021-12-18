@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { DAppProvider } from "./dapp/dapp";
+import { APP_NAME } from "./dapp/default";
+import { Header } from "./components/Header";
+
+const Page = (props: {
+  children:
+    | string
+    | number
+    | boolean
+    | {}
+    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+    | React.ReactNode[]
+    | React.ReactPortal
+    | null
+    | undefined;
+}) => {
+  return <div className="App"> {props.children} </div>;
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DAppProvider appName={APP_NAME}>
+      <React.Suspense fallback={null}>
+        <div>test</div>
+        <div className="App">
+          <Page>
+            <Header />
+          </Page>
+        </div>
+      </React.Suspense>
+    </DAppProvider>
   );
 }
 
