@@ -1,7 +1,6 @@
 # TezGames
 
-This app is a platform for playing games in public and with your friends. You ill connect to the app with your wallet and you can elect to play public games or you can play games with a private group of friends or any number of private groups with custom information sharing settings.
-
+This app is a platform for playing games in public and with friends. Connect to the app with a wallet and elect to play public games or you can private games with a private group of friends or any number of private groups with custom information sharing settings. This could connect to other apps and groups and a list is constructed from known wallets.
 
 # Backlog for future work
 
